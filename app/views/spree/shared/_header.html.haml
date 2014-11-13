@@ -3,11 +3,11 @@
     #small-navigation.visible-xs-block
       .row
         .col-xs-12.text-center
-          = link_to image_tag('logo-small.jpg'), spree.root_path
+          = link_to image_tag('logo-small.jpg'), root_path
       .row
         .col-xs-12.text-center
           #logo-title
-            = link_to 'Pretty As A Picture Scarves', spree.root_path
+            = link_to 'Pretty As A Picture Scarves', root_path
       %nav.navbar.navbar-default{:role => "navigation"}
         .container-fluid
           .navbar-header
@@ -21,26 +21,29 @@
 
           #main-navbar-collapse-1.collapse.navbar-collapse
             %ul.nav.navbar-nav.navbar-right
-              %li= link_to "Home", spree.root_path
-              %li= link_to "Products", spree.products_path
-              %li= link_to "About Us", main_app.about_us_path
-              %li= link_to "Contact Us", main_app.contact_path
+              %li= link_to "Home", root_path
+              %li= link_to "Products", products_path
+              %li= link_to "About Us", about_path
+              %li= link_to "Contact Us", contact_path
 
     #large-navigation.hidden-xs
       .row
         .col-sm-2
-          = link_to image_tag('logo.png'), spree.root_path
+          = link_to image_tag('logo.png'), root_path
         .col-sm-6#logo-title
           Pretty As A Picture Scarves
         .col-sm-4#cart
+          %ul
+            %li= render partial: 'spree/shared/login_bar'
+            %li#link-to-cart{"data-hook" => ""}= link_to_cart
 
       .row#main-navigation
         .col-sm-12
           %ul
-            %li= link_to "Home", spree.root_path
-            %li= link_to "Products", spree.products_path
-            %li= link_to "About Us", main_app.about_us_path
-            %li= link_to "Contact Us", main_app.contact_path
+            %li= link_to "Home", root_path
+            %li= link_to "Products", products_path
+            %li= link_to "About Us", about_path
+            %li= link_to "Contact Us", contact_path
 
 
 
