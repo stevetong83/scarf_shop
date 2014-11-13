@@ -1,20 +1,14 @@
 .row
-  .col-sm-12
-    %h1 Contact Us
-    %hr
-
-.row
-  .col-sm-12
+  .col-sm-6.col-sm-offset-3
     .well
+      %h1 Contact Us
       .row
-        .col-sm-3
+        .col-sm-12
           %p
             We are here when you need us. Please let us know how we can help.
-        .col-sm-9
-          = simple_form_for @message, html: {class: 'form-inline' } do |f|
-            = f.input :name
-            = f.input :email
-            = f.input :message, input_html: {rows: 8}
-            .row
-              .col-sm-offset-2.col-sm-7
-                = f.submit 'Send', disable_with: 'Sending', class: 'btn btn-primary'
+        .col-sm-12
+          = simple_form_for @message do |f|
+            = f.input :name, label: false, placeholder: 'Name'
+            = f.input :email, label: false, placeholder: 'Email'
+            = f.input :message, input_html: {rows: 8}, label: false, placeholder: 'Message'
+            = f.submit 'Send', disable_with: 'Sending', class: 'btn btn-primary btn-block btn-lg'
