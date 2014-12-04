@@ -15,4 +15,9 @@ class MailPreview < MailView
     Spree::ShipmentMailer.shipped_email(shipment)
   end
 
+  def contact_form
+    message = Message.first
+    Notifier.contact_form(message)
+  end
+
 end
