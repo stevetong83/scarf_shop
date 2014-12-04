@@ -49,6 +49,10 @@ $icon-font-path: "../../bootstrap/";
 .alert-alert { @extend .alert-info; }
 .alert-notice { @extend .alert-info; }
 
+.error {
+  color: red;
+  margin-top: 5px;
+}
 .product-body {
   height: 170px;
 }

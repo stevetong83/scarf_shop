@@ -9,5 +9,8 @@ Rails.application.routes.draw do
     get 'about', to: 'pages#about'
   end
 
+  if Rails.env.development?
+    mount MailPreview => 'mail_view'
+  end
 
 end

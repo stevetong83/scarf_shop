@@ -1,0 +1,38 @@
+= stylesheet_link_tag "emails"
+
+.row
+  = image_tag('email-logo.jpg')
+.row
+
+%table
+  %tr
+    %td
+      %p.lede
+        = Spree.t('order_mailer.cancel_email.dear_customer')
+      %p
+        = Spree.t('order_mailer.cancel_email.instructions')
+      %p
+        = Spree.t('order_mailer.cancel_email.order_summary_canceled')
+      %table
+        - @order.line_items.each do |item|
+          %tr
+            %td= item.variant.sku
+            %td
+              = raw(item.variant.product.name)
+              = raw(item.variant.options_text)
+            %td
+              (#{item.quantity}) @ #{item.single_money} = #{item.display_amount}
+        %tr
+          %td
+          %td= Spree.t('order_mailer.cancel_email.subtotal')
+          %td= @order.display_item_total
+        - @order.adjustments.eligible.each do |adjustment|
+          %tr
+            %td
+            %td= raw(adjustment.label)
+            %td= adjustment.display_amount
+        %tr
+          %td
+          %td= Spree.t('order_mailer.cancel_email.total')
+          %td= @order.display_total
+    %td.expander
