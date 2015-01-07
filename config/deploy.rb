@@ -3,8 +3,9 @@ lock '3.2.1'
 
 set :application, 'pretty_as_a_picture_scarves'
 set :repo_url, 'git@github.com:stevetong83/scarf_shop.git'
-set :user, 'deploy'
 set :deploy_to, "~/www/pretty_as_a_picture_scarves"
+set :user, 'deploy'
+set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets}
 
 
 
@@ -25,9 +26,6 @@ set :deploy_to, "~/www/pretty_as_a_picture_scarves"
 
 # Default value for :linked_files is []
 # set :linked_files, %w{config/database.yml}
-
-# Default value for linked_dirs is []
-# set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
