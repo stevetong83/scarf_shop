@@ -7,8 +7,6 @@ set :repo_url, 'git@github.com:stevetong83/scarf_shop.git'
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/opt/www/pretty_as_a_picture_scarves'
 
-server "104.236.138.32", :web, :app, :db, primary: true
-
 set :user, 'deploy'
 
 # Default branch is :master
