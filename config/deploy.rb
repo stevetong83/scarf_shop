@@ -4,7 +4,7 @@ lock '3.2.1'
 set :application, 'pretty_as_a_picture_scarves'
 set :repo_url, 'git@github.com:stevetong83/scarf_shop.git'
 set :user, 'deploy'
-set :deploy_to, "/www/pretty_as_a_picture_scarves"
+set :deploy_to, "~/www/pretty_as_a_picture_scarves"
 
 
 
