@@ -16,4 +16,6 @@ production:
   <<: *default
   database: scarf_shop_production
   username: deploy
+  password: mysqlsux
   host: localhost
+  socket: /var/run/mysqld/mysqld.sock
