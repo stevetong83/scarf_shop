@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.1.6'
-gem 'sqlite3'
+gem 'mysql2'
 
 # Assets and styles
 gem 'sass-rails', '~> 4.0.3'
@@ -13,23 +12,23 @@ gem 'haml'
 
 gem 'simple_form'
 
+# Emails
+gem 'premailer-rails'
+gem "letter_opener", group: :development
+gem "mail_view", "~> 2.0.4", group: :development
+
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
-# gem 'spree_braintree', :git => 'git://github.com/rortechie/spree-braintree.git'
-
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-gem 'braintree'
-gem 'premailer-rails'
+gem 'capistrano-rails', group: :development
 
-# Debugging
 group :development, :test do
   gem 'capybara'
   gem 'database_cleaner'
@@ -39,10 +38,8 @@ group :development, :test do
   gem 'pry-nav'
 end
 
-gem "letter_opener", group: :development
-gem "mail_view", "~> 2.0.4", group: :development
-
 # Spree
+gem 'braintree'
 gem 'spree', github: 'spree/spree', branch: '2-3-stable'
 gem 'spree_gateway', git: 'https://github.com/spree/spree_gateway.git', branch: '2-3-stable'
 gem 'spree_auth_devise', git: 'https://github.com/spree/spree_auth_devise.git', branch: '2-3-stable'
