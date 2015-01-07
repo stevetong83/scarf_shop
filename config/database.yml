@@ -16,3 +16,4 @@ production:
   <<: *default
   database: scarf_shop_production
   username: deploy
+  host: localhost
