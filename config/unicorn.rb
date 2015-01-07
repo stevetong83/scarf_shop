@@ -1,4 +1,4 @@
-root = "/opt/www/pretty_as_a_picture_scarves/current"
+root = "/www/pretty_as_a_picture_scarves/current"
 working_directory root
 pid "#{root}/tmp/pids/unicorn.pid"
 stderr_path "#{root}/log/unicorn.log"
