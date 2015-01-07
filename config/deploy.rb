@@ -3,11 +3,10 @@ lock '3.2.1'
 
 set :application, 'pretty_as_a_picture_scarves'
 set :repo_url, 'git@github.com:stevetong83/scarf_shop.git'
-
-# Default deploy_to directory is /var/www/my_app
+set :user, 'deploy'
 set :deploy_to, "/home/#{user}/apps/#{application}"
 
-set :user, 'deploy'
+
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
