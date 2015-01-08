@@ -46,5 +46,9 @@ namespace :deploy do
   end
 end
 
-after 'deploy:restart', invoke 'unicorn:reload'    # app IS NOT preloaded
-after 'deploy:restart', invoke 'unicorn:restart'   # app preloaded
+after 'deploy:publishing', 'deploy:restart'
+namespace :deploy do
+  task :restart do
+    invoke 'unicorn:reload'
+  end
+end
