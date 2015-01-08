@@ -43,8 +43,8 @@ namespace :deploy do
   after :publishing, :restart
 
   after :restart, :clear_cache do
-    invoke 'unicorn:restart'
-    invoke 'unicorn:reload'
   end
-
 end
+
+after 'deploy:restart', invoke 'unicorn:reload'    # app IS NOT preloaded
+after 'deploy:restart', invoke 'unicorn:restart'   # app preloaded
