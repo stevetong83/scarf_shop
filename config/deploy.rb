@@ -37,7 +37,9 @@ namespace :deploy do
 
   desc 'Restart application'
   task :restart do
-    invoke 'unicorn:reload'
+    on roles(:app), in: :sequence, wait: 5 do
+      invoke 'unicorn:reload'
+    end
   end
 
   after :publishing, :restart
