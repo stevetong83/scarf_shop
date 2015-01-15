@@ -6,7 +6,7 @@ set :repo_url, 'git@github.com:stevetong83/scarf_shop.git'
 set :deploy_to, "/home/deploy/pretty_as_a_picture_scarves"
 set :user, 'deploy'
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets}
-set :unicorn_config_path, "#{shared_path}/config/unicorn.rb"
+set :unicorn_config_path, "#/home/deploy/pretty_as_a_picture_scarves/config/unicorn.rb"
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
@@ -36,12 +36,14 @@ namespace :deploy do
 
   desc 'Restart application'
   task :restart do
-    invoke 'unicorn:reload'
   end
 
   after :publishing, :restart
 
   after :restart, :clear_cache do
   end
+  after 'deploy:restart', 'unicorn:reload'    # app IS NOT preloaded
+  after 'deploy:restart', 'unicorn:restart'   # app preloaded
+  after 'deploy:restart', 'unicorn:duplicate'
 end
 
