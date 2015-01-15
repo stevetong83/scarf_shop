@@ -397,7 +397,7 @@ PLATFORMS
 DEPENDENCIES
   braintree
   capistrano-rails
-  capistrano-rbenv
+  capistrano-rbenv (~> 2.0)
   capistrano3-unicorn
   capybara
   coffee-rails (~> 4.0.0)
