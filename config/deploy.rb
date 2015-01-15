@@ -1,8 +1,6 @@
 # config valid only for Capistrano 3.1
 lock '3.2.1'
 
-require 'capistrano-unicorn'
-
 set :application, 'pretty_as_a_picture_scarves'
 set :repo_url, 'git@github.com:stevetong83/scarf_shop.git'
 set :deploy_to, "/home/deploy/pretty_as_a_picture_scarves"
@@ -44,8 +42,10 @@ namespace :deploy do
 
   after :restart, :clear_cache do
   end
-  after 'deploy:restart', 'unicorn:reload'    # app IS NOT preloaded
-  after 'deploy:restart', 'unicorn:restart'   # app preloaded
-  after 'deploy:restart', 'unicorn:duplicate'
+
 end
 
+require 'capistrano-unicorn'
+after 'deploy:restart', 'unicorn:reload'    # app IS NOT preloaded
+after 'deploy:restart', 'unicorn:restart'   # app preloaded
+after 'deploy:restart', 'unicorn:duplicate'

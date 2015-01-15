@@ -28,7 +28,7 @@ gem 'unicorn'
 
 # Use Capistrano for deployment
 group :development do
-  gem 'capistrano-rails'
+  gem 'capistrano'
   gem 'capistrano-unicorn', :require => false
 end
 
