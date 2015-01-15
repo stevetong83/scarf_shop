@@ -31,7 +31,7 @@ gem 'unicorn'
 group :development do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
-  gem 'capistrano-rbenv'
+  gem 'capistrano-rbenv', '~> 2.0', require: false
 end
 
 group :development, :test do
