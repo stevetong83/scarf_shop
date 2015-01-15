@@ -6,6 +6,7 @@ set :repo_url, 'git@github.com:stevetong83/scarf_shop.git'
 set :deploy_to, "/home/deploy/pretty_as_a_picture_scarves"
 set :user, 'deploy'
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets}
+set :unicorn_config_path, "#{shared_path}/config/unicorn.rb"
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
