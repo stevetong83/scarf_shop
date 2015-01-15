@@ -1,4 +1,4 @@
-root = "/home/deploy/apps/pretty_as_a_picture_scarves/current"
+root = "/home/deploy/apps/pretty_as_a_picture_scarves"
 working_directory root
 pid "#{root}/tmp/pids/unicorn.pid"
 stderr_path "#{root}/log/unicorn.log"
