@@ -43,3 +43,4 @@ role :db,  %w{deploy@104.236.138.32}
 #     auth_methods: %w(publickey password)
 #     # password: 'please use keys'
 #   }
+:unicorn_config_path = "#{shared_path}/config/unicorn.rb"

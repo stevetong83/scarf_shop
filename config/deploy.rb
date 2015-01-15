@@ -7,7 +7,6 @@ set :deploy_to, "/home/deploy/pretty_as_a_picture_scarves"
 set :user, 'deploy'
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets}
 
-
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
@@ -36,6 +35,7 @@ namespace :deploy do
 
   desc 'Restart application'
   task :restart do
+    invoke 'unicorn:reload'
   end
 
   after :publishing, :restart
