@@ -31,6 +31,7 @@ gem 'unicorn'
 group :development do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'capistrano-rbenv'
 end
 
 group :development, :test do
